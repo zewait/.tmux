@@ -3,7 +3,7 @@
 # use the powerline patched font variant of the theme, possible values are:
 #   - default
 #   - powerline
-tmux_conf_theme=default
+tmux_conf_theme=powerline
 #tmux_conf_theme=powerline
 
 # display an indicator in the status line when the prefix key has been pressed,
@@ -114,9 +114,13 @@ tmux_conf_new_session_prompt=false
 # ------------------------------------------------------------------------------
 # this is the place to further customize tmux's configuration
 
+set-option -g allow-rename off
+
 set -g history-limit 10000
 
 set-window-option -g mode-keys vi
 list-keys -t vi-copy
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
+
+
